@@ -9,10 +9,10 @@ app.use(express.json());
 
 var expressHandlebars = require("express-handlebars");
 
-app.engine("handlebars", expressHandlebars({ defaultLayout: "main "}));
+app.engine("handlebars", expressHandlebars({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/burgers_controller.js");
+var routes = require("./controllers/burgers_controller.js")
 
 app.use(routes);
 
