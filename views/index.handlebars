@@ -1,6 +1,15 @@
 <div class="container">
     <div class="row">
-            <h1> Eat-Da-Burger! </h1>
+        <h1> Eat-Da-Burger! </h1>
     </div>
-    
+
+    <h3> Burgers to be Devoured! </h3>
+
+    <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+       {{burger_name}} <button> Devour It! </button>
+        {{/unless}}
+        {{/each}}
+    </ul>
 </div>
