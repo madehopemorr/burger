@@ -3,13 +3,32 @@
         <h1> Eat-Da-Burger! </h1>
     </div>
 
-    <h3> Burgers to be Devoured! </h3>
+    <h3> Burgers to be Devoured: </h3>
 
     <ul>
         {{#each burgers}}
         {{#unless devoured}}
-       {{burger_name}} <button> Devour It! </button>
+        <form class="form-devour">
+            <input input type="hidden" class="burgerId" type="text" value="{{this.id}}"><br>
+       {{burger_name}} <button type="submit"> Devour It! </button>
+       </form>
         {{/unless}}
         {{/each}}
     </ul>
+</div>
+
+<div>
+    {{#each burger_data}}
+        {{#if this.devoured}}
+            <input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
+        {{/if}}
+    {{/each}}
+</div>
+
+<div>
+    <form action="/burgers/create" method="POST">
+            <input type="text" class="form-control" name="burger_name" value="" id="type here">
+            <button type="submit" class="submit">Submit</button>
+    </form>
+    <p>Please enter a burger you would like to eat then Click the submit button.</p>
 </div>
