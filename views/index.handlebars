@@ -3,32 +3,43 @@
         <h1> Eat-Da-Burger! </h1>
     </div>
 
-    <h3> Burgers to be Devoured: </h3>
+<div class="enter-items">
+    <p>Please enter a burger you would like to eat then Click the submit button.</p>
+    <form action="/api/burgers" method="POST">
+        <input type="text" class="form-control" name="burger_name" value="" id="type here">
+        <button type="submit" class="submit">Submit</button>
+    </form>
+    
+</div>
 
-    <ul>
-        {{#each burgers}}
-        {{#unless devoured}}
-        <form class="form-devour">
-            <input input type="hidden" class="burgerId" type="text" value="{{this.id}}"><br>
-       {{burger_name}} <button type="submit"> Devour It! </button>
-       </form>
+    <h1> My Burgers: </h1>
+
+    <div>
+
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <form class="form-devour">
+                <input input type="hidden" class="burgerId" type="text" value="{{this.id}}"><br>
+             {{burger_name}} <button type="submit" id="burger-devoured"> Devour It! </button>
+            </form>
+            {{/unless}}
+            {{/each}}
+        </ul>
+
+        {{#each burger_data}}
+        {{#unless this.devoured}}
+        <pre>{{this.id}}. {{this.burger_name}}</pre>
         {{/unless}}
         {{/each}}
-    </ul>
+    </div>
 </div>
 
-<div>
-    {{#each burger_data}}
-        {{#if this.devoured}}
-            <input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
-        {{/if}}
+<h1>Devoured Burgers!</h1>
+<div class="ate">
+    {{#each burgers}}
+    {{#if this.devoured}}
+    <input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
+    {{/if}}
     {{/each}}
-</div>
-
-<div>
-    <form action="/burgers/create" method="POST">
-            <input type="text" class="form-control" name="burger_name" value="" id="type here">
-            <button type="submit" class="submit">Submit</button>
-    </form>
-    <p>Please enter a burger you would like to eat then Click the submit button.</p>
 </div>
