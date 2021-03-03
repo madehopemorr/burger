@@ -1,0 +1,36 @@
+body {
+    background-color: tan;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+h3 {
+    color: teal;
+    text-align: center;
+}
+
+ul {
+    color: teal;
+    text-align: center;
+}
+
+.ate {
+    text-align: center;
+}
+
+.submit {
+    background-color: teal;
+    color: white;
+}
+
+p {
+    text-align: center;
+    color: teal;
+}
+
+.enter-items {
+    text-align: center;
+}
