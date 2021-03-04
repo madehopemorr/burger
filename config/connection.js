@@ -1,5 +1,5 @@
 //setup code to connect node to mySQL
-var mySql = require("mysql");
+var mysql = require("mysql");
 
 var connection;
 
